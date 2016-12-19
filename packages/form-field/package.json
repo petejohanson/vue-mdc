@@ -1,0 +1,14 @@
+{
+  "name": "@v-material/form-field",
+  "version": "0.1.0",
+  "description": "VueJS Material Components Form Field",
+  "main": "Checkbox.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pete Johanson",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@material/form-field": "^0.1.0"
+  }
+}
