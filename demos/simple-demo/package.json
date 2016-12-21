@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@material/checkbox": "^0.1.0",
+    "@material/menu": "^0.1.0",
     "@material/drawer": "^0.1.0",
     "@material/form-field": "^0.1.0",
     "@material/icon-toggle": "^0.1.0",
@@ -22,6 +23,7 @@
     "@material/snackbar": "^0.1.0",
     "@material/typography": "^0.1.0",
     "@v-material/checkbox": "^0.1.0",
+    "@v-material/menu": "^0.1.0",
     "@v-material/drawer": "^0.1.0",
     "@v-material/form-field": "^0.1.0",
     "@v-material/icon-toggle": "^0.1.0",

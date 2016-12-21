@@ -75,12 +75,24 @@
      </div>
      <p>Favorited?: {{favorited}}</p>
     </div>
+    <div class="mdc-menu-anchor">
+      <button @click="$refs.menu.open()">Open Menu</button>
+      <simple-menu ref="menu" :items="['Menu One', 'Menu Two']" @selected="onMenuItemSelected">
+        <menu-list-item>Item One</menu-list-item>
+        <menu-list-item>Item Two</menu-list-item>
+	<div class="mdc-list-divider" role="separator"></div>
+        <menu-list-item>Item Three</menu-list-item>
+        <menu-list-item>Item Four</menu-list-item>
+      </simple-menu>
+    </div>
   </main>
 </div>
 </template>
 
 <script lang="babel">
 import Ripple from '@v-material/ripple/Ripple';
+import SimpleMenu from '@v-material/menu/SimpleMenu';
+import MenuListItem from '@v-material/menu/MenuListItem';
 import Snackbar from '@v-material/snackbar/Snackbar';
 import Checkbox from '@v-material/checkbox/Checkbox';
 import IconToggle from '@v-material/icon-toggle/IconToggle';
@@ -99,7 +111,7 @@ export default {
       favoritedLabel: 'Remove from favorites'
     };
   },
-  components: { FormField, Checkbox, CheckboxLabel, IconToggle, Snackbar, TemporaryDrawer },
+  components: { FormField, SimpleMenu, MenuListItem, Checkbox, CheckboxLabel, IconToggle, Snackbar, TemporaryDrawer },
   directives: { Ripple },
   watch: {
     checked () {
@@ -107,6 +119,9 @@ export default {
     }
   },
   methods: {
+    onMenuItemSelected ({index, item}) {
+      console.log('Item selected: ', item);
+    },
     showSnackbar () {
       this.$root.$emit('mailSent', {
         message: 'Mail Sent',
