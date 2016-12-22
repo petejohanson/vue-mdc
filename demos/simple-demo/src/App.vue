@@ -60,6 +60,17 @@
         <radio v-model="radioChecked" :disabled="checked" id="my-radio2" name="radios" val="Two" label-id="my-radio2-label"></radio>
         <radio-label id="my-radio2-label" for="my-radio2" label="Two"></radio-label>
       </form-field>
+      <span class="mdc-theme--dark" style="display: inline-block; padding-right: 12px;">
+        <form-field :align-end='alignEnd'>
+          <radio v-model="radioChecked" :disabled="checked" id="my-radio3" name="radios" val="Three" label-id="my-radio3-label"></radio>
+          <radio-label id="my-radio3-label" for="my-radio3" label="Three"></radio-label>
+        </form-field>
+
+        <form-field :align-end='alignEnd'>
+          <radio v-model="radioChecked" :disabled="checked" id="my-radio4" name="radios" val="Four" label-id="my-radio4-label"></radio>
+          <radio-label id="my-radio4-label" for="my-radio4" label="Four"></radio-label>
+        </form-field>
+      </span>
     </div>
     <div>
       <form-field>
@@ -203,6 +214,10 @@ $mdc-theme-accent: #f06292;
   @include mdc-elevation(2);
   width: 150px;
   height: 150px;
+}
+
+.mdc-theme--dark {
+  background-color: #303030;
 }
 
 main {
