@@ -47,13 +47,23 @@
     <div class="demo-surface" v-ripple><p>{{label}}</p></div>
     <div>
       <form-field :align-end='alignEnd'>
-        <checkbox v-model="checked" label="Test me" id="my-check" label-id="my-check-label"></checkbox>
+        <checkbox v-model="checked" :label="label" id="my-check" label-id="my-check-label"></checkbox>
         <checkbox-label id="my-check-label" for="my-check" :label="label"></checkbox-label>
+      </form-field>
+
+      <form-field :align-end='alignEnd'>
+        <radio v-model="radioChecked" :disabled="checked" id="my-radio1" name="radios" val="One" label-id="my-radio1-label"></radio>
+        <radio-label id="my-radio1-label" for="my-radio1" label="One"></radio-label>
+      </form-field>
+
+      <form-field :align-end='alignEnd'>
+        <radio v-model="radioChecked" :disabled="checked" id="my-radio2" name="radios" val="Two" label-id="my-radio2-label"></radio>
+        <radio-label id="my-radio2-label" for="my-radio2" label="Two"></radio-label>
       </form-field>
     </div>
     <div>
       <form-field>
-        <checkbox v-model="alignEnd" label="Test me" id="my-check" label-id="my-check-label"></checkbox>
+        <checkbox v-model="alignEnd" :label="label" id="my-check" label-id="my-check-label"></checkbox>
         <checkbox-label id="my-check-label" for="my-check" label="Align End?"></checkbox-label>
       </form-field>
       <input v-model="label"></input>
@@ -94,8 +104,10 @@ import Ripple from '@v-material/ripple/Ripple';
 import SimpleMenu from '@v-material/menu/SimpleMenu';
 import MenuListItem from '@v-material/menu/MenuListItem';
 import Snackbar from '@v-material/snackbar/Snackbar';
-import Checkbox from '@v-material/checkbox/Checkbox';
 import IconToggle from '@v-material/icon-toggle/IconToggle';
+import Radio from '@v-material/radio/Radio';
+import RadioLabel from '@v-material/radio/RadioLabel';
+import Checkbox from '@v-material/checkbox/Checkbox';
 import CheckboxLabel from '@v-material/checkbox/CheckboxLabel';
 import FormField from '@v-material/form-field/FormField';
 import TemporaryDrawer from '@v-material/drawer/TemporaryDrawer';
@@ -103,7 +115,8 @@ import TemporaryDrawer from '@v-material/drawer/TemporaryDrawer';
 export default {
   data () {
     return {
-      label: 'Test Me',
+      label: 'Disable Radios',
+      radioChecked: 'One',
       checked: true,
       alignEnd: false,
       changeCount: 0,
@@ -111,7 +124,18 @@ export default {
       favoritedLabel: 'Remove from favorites'
     };
   },
-  components: { FormField, SimpleMenu, MenuListItem, Checkbox, CheckboxLabel, IconToggle, Snackbar, TemporaryDrawer },
+  components: {
+    FormField,
+    SimpleMenu,
+    MenuListItem,
+    Checkbox,
+    CheckboxLabel,
+    Radio,
+    RadioLabel,
+    IconToggle,
+    Snackbar,
+    TemporaryDrawer
+  },
   directives: { Ripple },
   watch: {
     checked () {
