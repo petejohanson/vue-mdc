@@ -13,6 +13,7 @@
     "vue": "^2.1.0"
   },
   "devDependencies": {
+    "@material/textfield": "^0.1.0",
     "@material/radio": "^0.1.0",
     "@material/checkbox": "^0.1.0",
     "@material/menu": "^0.1.0",
@@ -23,6 +24,7 @@
     "@material/ripple": "^0.1.0",
     "@material/snackbar": "^0.1.0",
     "@material/typography": "^0.1.0",
+    "@v-material/textfield": "^0.1.0",
     "@v-material/radio": "^0.1.0",
     "@v-material/checkbox": "^0.1.0",
     "@v-material/menu": "^0.1.0",

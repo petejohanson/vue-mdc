@@ -73,6 +73,12 @@
       </span>
     </div>
     <div>
+      <textfield id="my-textfield" label="Test Textfield" v-model="text"></textfield>
+    </div>
+    <div>
+      <textfield id="my-multiline" label="Test Multine" v-model="multilineText" :multiline="true" :rows="6" :cols="40"></textfield>
+    </div>
+    <div>
       <form-field>
         <checkbox v-model="alignEnd" :label="label" id="my-check" label-id="my-check-label"></checkbox>
         <checkbox-label id="my-check-label" for="my-check" label="Align End?"></checkbox-label>
@@ -116,6 +122,7 @@ import SimpleMenu from '@v-material/menu/SimpleMenu';
 import MenuListItem from '@v-material/menu/MenuListItem';
 import Snackbar from '@v-material/snackbar/Snackbar';
 import IconToggle from '@v-material/icon-toggle/IconToggle';
+import Textfield from '@v-material/textfield/Textfield';
 import Radio from '@v-material/radio/Radio';
 import RadioLabel from '@v-material/radio/RadioLabel';
 import Checkbox from '@v-material/checkbox/Checkbox';
@@ -126,6 +133,8 @@ import TemporaryDrawer from '@v-material/drawer/TemporaryDrawer';
 export default {
   data () {
     return {
+      text: 'Test text field',
+      multilineText: 'Test text field',
       label: 'Disable Radios',
       radioChecked: 'One',
       checked: true,
@@ -139,6 +148,7 @@ export default {
     FormField,
     SimpleMenu,
     MenuListItem,
+    Textfield,
     Checkbox,
     CheckboxLabel,
     Radio,
