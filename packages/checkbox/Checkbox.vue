@@ -75,11 +75,6 @@ export default {
       this.changeHandlers.forEach((h) => h(event));
       this.$emit('input', event.target.checked);
     }
-  },
-  computed: {
-    labelId () {
-      return this.id + '-label';
-    }
   }
 }
 

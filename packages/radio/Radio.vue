@@ -81,9 +81,6 @@ export default {
     checked: {
       get() { return this.value; },
       set (val) { this.checkedProxy = val; }
-    },
-    labelId () {
-      return this.id + '-label';
     }
   }
 }

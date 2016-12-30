@@ -2,7 +2,7 @@
   "name": "@v-material/icon-toggle",
   "version": "0.1.0",
   "description": "VueJS Material Components Icon Toggle",
-  "main": "Checkbox.vue",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

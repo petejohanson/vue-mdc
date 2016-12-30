@@ -6,7 +6,7 @@
     <span class="demo-toolbar--label">VueJS Material Components Demo</span>
   </div>
 
-  <temporary-drawer ref="drawer" style="z-index: 20;">
+  <mdc-temporary-drawer ref="drawer" style="z-index: 20;">
     <div slot="header" class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-them--text-primary-on-primary">
       Header here
     </div>
@@ -41,60 +41,60 @@
         </a>
       </div>
     </nav>
-  </temporary-drawer>
+  </mdc-temporary-drawer>
 
   <main>
-    <div class="demo-surface" v-ripple><p>{{label}}</p></div>
+    <div class="demo-surface" v-mdc-ripple><p>{{label}}</p></div>
     <div>
-      <form-field :align-end='alignEnd'>
-        <checkbox v-model="checked" :label="label" id="my-check" label-id="my-check-label"></checkbox>
-        <checkbox-label id="my-check-label" for="my-check" :label="label"></checkbox-label>
-      </form-field>
+      <mdc-form-field :align-end='alignEnd'>
+        <mdc-checkbox v-model="checked" :label="label" id="my-check" label-id="my-check-label"></mdc-checkbox>
+        <mdc-checkbox-label id="my-check-label" for="my-check" :label="label"></mdc-checkbox-label>
+      </mdc-form-field>
 
-      <form-field :align-end='alignEnd'>
-        <radio v-model="radioChecked" :disabled="checked" id="my-radio1" name="radios" val="One" label-id="my-radio1-label"></radio>
-        <radio-label id="my-radio1-label" for="my-radio1" label="One"></radio-label>
-      </form-field>
+      <mdc-form-field :align-end='alignEnd'>
+        <mdc-radio v-model="radioChecked" :disabled="checked" id="my-radio1" name="radios" val="One" label-id="my-radio1-label"></mdc-radio>
+        <mdc-radio-label id="my-radio1-label" for="my-radio1" label="One"></mdc-radio-label>
+      </mdc-form-field>
 
-      <form-field :align-end='alignEnd'>
-        <radio v-model="radioChecked" :disabled="checked" id="my-radio2" name="radios" val="Two" label-id="my-radio2-label"></radio>
-        <radio-label id="my-radio2-label" for="my-radio2" label="Two"></radio-label>
-      </form-field>
+      <mdc-form-field :align-end='alignEnd'>
+        <mdc-radio v-model="radioChecked" :disabled="checked" id="my-radio2" name="radios" val="Two" label-id="my-radio2-label"></mdc-radio>
+        <mdc-radio-label id="my-radio2-label" for="my-radio2" label="Two"></mdc-radio-label>
+      </mdc-form-field>
       <span class="mdc-theme--dark" style="display: inline-block; padding-right: 12px;">
-        <form-field :align-end='alignEnd'>
-          <radio v-model="radioChecked" :disabled="checked" id="my-radio3" name="radios" val="Three" label-id="my-radio3-label"></radio>
-          <radio-label id="my-radio3-label" for="my-radio3" label="Three"></radio-label>
-        </form-field>
+        <mdc-form-field :align-end='alignEnd'>
+          <mdc-radio v-model="radioChecked" :disabled="checked" id="my-radio3" name="radios" val="Three" label-id="my-radio3-label"></mdc-radio>
+          <mdc-radio-label id="my-radio3-label" for="my-radio3" label="Three"></mdc-radio-label>
+        </mdc-form-field>
 
-        <form-field :align-end='alignEnd'>
-          <radio v-model="radioChecked" :disabled="checked" id="my-radio4" name="radios" val="Four" label-id="my-radio4-label"></radio>
-          <radio-label id="my-radio4-label" for="my-radio4" label="Four"></radio-label>
-        </form-field>
+        <mdc-form-field :align-end='alignEnd'>
+          <mdc-radio v-model="radioChecked" :disabled="checked" id="my-radio4" name="radios" val="Four" label-id="my-radio4-label"></mdc-radio>
+          <mdc-radio-label id="my-radio4-label" for="my-radio4" label="Four"></mdc-radio-label>
+        </mdc-form-field>
       </span>
     </div>
     <div>
-      <textfield id="my-textfield" label="Test Textfield" v-model="text"></textfield>
+      <mdc-textfield id="my-textfield" label="Test Textfield" v-model="text"></mdc-textfield>
     </div>
     <div>
-      <textfield id="my-multiline" label="Test Multine" v-model="multilineText" :multiline="true" :rows="6" :cols="40"></textfield>
+      <mdc-textfield id="my-multiline" label="Test Multine" v-model="multilineText" :multiline="true" :rows="6" :cols="40"></mdc-textfield>
     </div>
     <div>
-      <form-field>
-        <checkbox v-model="alignEnd" :label="label" id="my-check" label-id="my-check-label"></checkbox>
-        <checkbox-label id="my-check-label" for="my-check" label="Align End?"></checkbox-label>
-      </form-field>
+      <mdc-form-field>
+        <mdc-checkbox v-model="alignEnd" :label="label" id="my-check" label-id="my-check-label"></mdc-checkbox>
+        <mdc-checkbox-label id="my-check-label" for="my-check" label="Align End?"></mdc-checkbox-label>
+      </mdc-form-field>
       <input v-model="label"></input>
     </div>
     <div>
      <p>Change count: {{changeCount}}</p>
     </div>
     <button type="button" @click="showSnackbar">Show Snackbar</button>
-    <snackbar event='mailSent'></snackbar>
+    <mdc-snackbar event='mailSent'></mdc-snackbar>
 
-    <icon-toggle v-model="favorited"
+    <mdc-icon-toggle v-model="favorited"
                  :toggle-on="{'label': favoritedLabel, 'content': 'favorite'}"
                  :toggle-off="{'label': 'Add to favorites', 'content': 'favorite_border'}">
-    </icon-toggle>
+    </mdc-icon-toggle>
     <div>
      <div>
        <label for="favorited-label">Favorited Label</label>
@@ -104,31 +104,28 @@
     </div>
     <div class="mdc-menu-anchor">
       <button @click="$refs.menu.open()">Open Menu</button>
-      <simple-menu ref="menu" :items="['Menu One', 'Menu Two']" @selected="onMenuItemSelected">
-        <menu-list-item>Item One</menu-list-item>
-        <menu-list-item>Item Two</menu-list-item>
+      <mdc-simple-menu ref="menu" :items="['Menu One', 'Menu Two']" @selected="onMenuItemSelected">
+        <mdc-menu-list-item>Item One</mdc-menu-list-item>
+        <mdc-menu-list-item>Item Two</mdc-menu-list-item>
 	<div class="mdc-list-divider" role="separator"></div>
-        <menu-list-item>Item Three</menu-list-item>
-        <menu-list-item>Item Four</menu-list-item>
-      </simple-menu>
+        <mdc-menu-list-item>Item Three</mdc-menu-list-item>
+        <mdc-menu-list-item>Item Four</mdc-menu-list-item>
+      </mdc-simple-menu>
     </div>
   </main>
 </div>
 </template>
 
 <script lang="babel">
-import Ripple from '@v-material/ripple/Ripple';
-import SimpleMenu from '@v-material/menu/SimpleMenu';
-import MenuListItem from '@v-material/menu/MenuListItem';
-import Snackbar from '@v-material/snackbar/Snackbar';
-import IconToggle from '@v-material/icon-toggle/IconToggle';
-import Textfield from '@v-material/textfield/Textfield';
-import Radio from '@v-material/radio/Radio';
-import RadioLabel from '@v-material/radio/RadioLabel';
-import Checkbox from '@v-material/checkbox/Checkbox';
-import CheckboxLabel from '@v-material/checkbox/CheckboxLabel';
-import FormField from '@v-material/form-field/FormField';
-import TemporaryDrawer from '@v-material/drawer/TemporaryDrawer';
+import { MdcRipple } from '@v-material/ripple';
+import { MdcSimpleMenu, MdcMenuListItem } from '@v-material/menu';
+import { MdcSnackbar } from '@v-material/snackbar';
+import { MdcIconToggle } from '@v-material/icon-toggle';
+import { MdcTextfield } from '@v-material/textfield';
+import { MdcRadio, MdcRadioLabel } from '@v-material/radio';
+import { MdcCheckbox, MdcCheckboxLabel } from '@v-material/checkbox';
+import { MdcFormField } from '@v-material/form-field';
+import { MdcTemporaryDrawer } from '@v-material/drawer';
 
 export default {
   data () {
@@ -145,19 +142,19 @@ export default {
     };
   },
   components: {
-    FormField,
-    SimpleMenu,
-    MenuListItem,
-    Textfield,
-    Checkbox,
-    CheckboxLabel,
-    Radio,
-    RadioLabel,
-    IconToggle,
-    Snackbar,
-    TemporaryDrawer
+    MdcFormField,
+    MdcSimpleMenu,
+    MdcMenuListItem,
+    MdcTextfield,
+    MdcCheckbox,
+    MdcCheckboxLabel,
+    MdcRadio,
+    MdcRadioLabel,
+    MdcIconToggle,
+    MdcSnackbar,
+    MdcTemporaryDrawer
   },
-  directives: { Ripple },
+  directives: { MdcRipple },
   watch: {
     checked () {
       this.changeCount++;
