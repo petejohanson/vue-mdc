@@ -1,0 +1,17 @@
+{
+  "name": "@v-material/select",
+  "version": "0.1.0",
+  "description": "VueJS Material Components Select",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pete Johanson",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "dependencies": {
+    "@material/select": "^0.1.0"
+  }
+}

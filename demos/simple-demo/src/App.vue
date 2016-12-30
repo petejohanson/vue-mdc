@@ -112,6 +112,7 @@
         <mdc-menu-list-item>Item Four</mdc-menu-list-item>
       </mdc-simple-menu>
     </div>
+    <mdc-select :options="options" v-model="selectedOption"></mdc-select>
   </main>
 </div>
 </template>
@@ -120,6 +121,7 @@
 import { MdcRipple } from '@v-material/ripple';
 import { MdcSimpleMenu, MdcMenuListItem } from '@v-material/menu';
 import { MdcSnackbar } from '@v-material/snackbar';
+import { MdcSelect } from '@v-material/select';
 import { MdcIconToggle } from '@v-material/icon-toggle';
 import { MdcTextfield } from '@v-material/textfield';
 import { MdcRadio, MdcRadioLabel } from '@v-material/radio';
@@ -138,6 +140,11 @@ export default {
       alignEnd: false,
       changeCount: 0,
       favorited: true,
+      options: [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' }
+      ],
+      selectedOption: 'Banana',
       favoritedLabel: 'Remove from favorites'
     };
   },
@@ -150,6 +157,7 @@ export default {
     MdcCheckboxLabel,
     MdcRadio,
     MdcRadioLabel,
+    MdcSelect,
     MdcIconToggle,
     MdcSnackbar,
     MdcTemporaryDrawer

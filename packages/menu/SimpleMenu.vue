@@ -9,7 +9,20 @@
 
 <script lang="babel">
 import { MDCSimpleMenuFoundation } from '@material/menu';
-import {getTransformPropertyName} from '@material/menu/util';
+import { getTransformPropertyName } from '@material/menu/util';
+
+function emit(el, evtType, evtData) {
+  let evt;
+  if (typeof CustomEvent === 'function') {
+    evt = new CustomEvent(evtType, {detail: evtData});
+  } else {
+    evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(evtType, false, false, evtData);
+  }
+
+  el.dispatchEvent(evt);
+}
+
 
 export default {
   data () {
@@ -79,10 +92,13 @@ export default {
         return vm.domItems.indexOf(target);
       },
       notifySelected ({index}) {
-	vm.$emit('selected', { item: vm.domItems[index], index });
+	const data = { item: vm.domItems[index], index }
+	vm.$emit('selected', data);
+	emit(vm.$el, 'MDCSimpleMenu:selected', data);
       },
       notifyCancel () {
         vm.$emit('cancel');
+	emit(vm.$el, 'MDCSimpleMenu:cancel');
       },
       saveFocus () {
         vm.previousFocus = document.activeElement;
@@ -124,11 +140,14 @@ export default {
     this.foundation.destroy();
   },
   methods: {
-    open () {
-      this.foundation.open();
+    open (options) {
+      this.foundation.open(options);
     }
   },
   computed: {
+    isOpen () {
+      return this.foundation.isOpen();
+    },
     domItems () {
       return [].slice.call(this.$refs.itemsContainer.querySelectorAll('.mdc-list-item[role]'));
     }
