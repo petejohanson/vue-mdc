@@ -9,6 +9,7 @@ To try out the simple demo, do the following:
 ```
 $ cd vue-mdc
 $ npm install -g lerna # Skip this if lerna is already installed
+$ npm install
 $ lerna bootstrap
 $ cd demos/simple-demo
 $ npm run dev
