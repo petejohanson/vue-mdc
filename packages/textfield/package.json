@@ -12,6 +12,6 @@
     "vue": "^2.0.0"
   },
   "dependencies": {
-    "@material/textfield": "^0.1.0"
+    "@material/textfield": "^0.2.0"
   }
 }

@@ -12,6 +12,6 @@
     "vue": "^2.0.0"
   },
   "dependencies": {
-    "@material/snackbar": "^0.1.0"
+    "@material/snackbar": "^0.1.5"
   }
 }
